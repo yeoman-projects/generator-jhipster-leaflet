@@ -22,6 +22,41 @@ Then run the module on a JHipster generated application:
 yo jhipster-leaflet
 ```
 
+## Using Docker
+
+Download the Dockerfile:
+
+```bash
+mkdir docker
+cd docker
+wget https://github.com/yeoman-projects/generator-jhipster-leaflet/raw/master/Dockerfile
+```
+
+Build the Docker images:
+
+```bash
+docker build -t generator-jhipster-leaflet:latest .
+```
+
+Make a folder where you want to generate the Service:
+
+```bash
+mkdir service
+cd service
+```
+
+Run the generator from image to generate service:
+
+```bash
+docker run -it --rm -v $PWD:/home/jhipster/app generator-jhipster-leaflet
+```
+
+Run and attach interactive shell to the generator docker container to work from inside the running container:
+
+```bash
+docker run -it --rm -v $PWD:/home/jhipster/app generator-jhipster-leaflet /bin/bash
+```
+
 ## Usage
 
 ![](usage.gif)
